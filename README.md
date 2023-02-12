@@ -37,3 +37,7 @@ allprojects {
     final _masOaidPlugin = MasOaid();
      await _masOaidPlugin.getOAID();
 ```
+4. applicationId、证书的名子，证书的内容必须统一,即：
+   1. 证书是为此项目申请的
+   2. 项目的ID必须是证书的名子
+    

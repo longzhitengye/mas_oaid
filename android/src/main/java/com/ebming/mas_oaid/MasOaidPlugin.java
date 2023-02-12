@@ -97,7 +97,7 @@ public class MasOaidPlugin implements FlutterPlugin, MethodCallHandler, Activity
     @Override
     public void onIdsValid(String ids) {
         if (aresult != null)
-            aresult.success("Android success " + ids);
+            aresult.success(ids);
     }
 
     public static String loadPemFromAssetFile(Context context, String assetFileName) {

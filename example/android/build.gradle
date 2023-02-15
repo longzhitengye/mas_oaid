@@ -15,9 +15,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs project(':mas_oaid').file('libs')
-        }
+        // flatDir {
+        //     dirs project(':mas_oaid').file('libs')
+        // }
     }
 }
 

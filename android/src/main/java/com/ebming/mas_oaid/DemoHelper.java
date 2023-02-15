@@ -49,6 +49,7 @@ public class DemoHelper implements IIdentifierListener {
      * @param cxt
      */
     public void getDeviceIds(Context cxt,boolean isGetOAID,boolean isGetVAID,boolean isGetAAID){
+        Log.w("TAG","22222");
         // TODO （4）初始化SDK证书
         if(!isCertInit){ // 证书只需初始化一次
             // 证书为PEM文件中的所有文本内容（包括首尾行、换行符）

@@ -45,25 +45,22 @@ public class MasOaidPlugin implements FlutterPlugin, MethodCallHandler, Activity
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "mas_oaid");
         channel.setMethodCallHandler(this);
+        System.loadLibrary("msaoaidsec");
     }
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         if (call.method.equals("getOAID")) {
+            try {
+                
+                DemoHelper demoHelper = new DemoHelper(this, activity.getApplication().getPackageName());
+                demoHelper.getDeviceIds(context);
+                aresult = result;
+            } catch (Exception e) {
+            
+                result.success("error");
+            }
 
-
-            System.loadLibrary("msaoaidsec");
-            DemoHelper demoHelper = new DemoHelper(this, activity.getApplication().getPackageName());
-            demoHelper.getDeviceIds(context);
-            aresult = result;
-
-
-//            boolean isCertInit = MdidSdkHelper.InitCert(context, loadPemFromAssetFile(context, "com.duanyitang.ebming.cert.pem"));
-//            if (isCertInit) {
-//                result.success("Android success");
-//            } else {
-//                result.success("Android failed");
-//            }
 
         } else {
             result.notImplemented();

@@ -1,4 +1,4 @@
-group 'com.ebming.mas_oaid'
+// group 'com.ebming.mas_oaid'
 version '1.0'
 
 buildscript {
